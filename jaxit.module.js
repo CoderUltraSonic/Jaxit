@@ -81,11 +81,19 @@ class Jaxit {
     this.jaxconsole.style.backgroundColor = newbgcolor; 
   }
 
-  changeConsoleColorGradient(arrofcolors, type, direction) {
+  changeConsoleColorGradient(arrofcolors, type="linear", direction) {
     if (type == 'linear') {
       this.jaxconsole.style.backgroundImage = 'linear-gradient(' + direction + ',' + arrofcolors.join(",") +')';
     } else if (type == 'radial') {
       this.jaxconsole.style.backgroundImage = 'radial-gradient(' + arrofcolors.join(",") +') ';
+    }
+  }
+
+  changeConsoleSize(wantedWidth="", wantedHeight="", type="px", type1="px") {
+    if (wantedWidth != "") {
+      this.jaxconsole.style.width = `${wantedWidth}${type}`
+    } else if (wantedHeight != "") {
+      this.jaxconsole.style.height = `${wantedHeight}${type}`;
     }
   }
 
