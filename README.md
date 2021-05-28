@@ -1,15 +1,8 @@
 # Jaxit
 Jaxit is an easy-to-use library that makes an interactive terminal for your programs.
 
-## Jaxit Tutorial for Absolute Beginners
-
-_**We will first learn about Jaxit.**_
-
-Jaxit is a lightweight, easy-to-use library. It is not in any way
-dependent on any library such as Xterm.JS. 
-
 Jaxit was made by Codeverse. It has a MIT License so you can make copies of it.
-Jaxit is not yet in Github, but check on Codeverse's Profile, [CoderUltraSonic](https://github.com/CoderUltraSonic).
+Jaxit is in Github, so check on Codeverse's Profile, [CoderUltraSonic](https://github.com/CoderUltraSonic).
 
 ---
 
@@ -18,12 +11,12 @@ Jaxit is not yet in Github, but check on Codeverse's Profile, [CoderUltraSonic](
 To use Jaxit's CSS File, simply type this in the HTML File.
 
 ```html 
-<link rel="stylesheet" type="text/css" href="https://jaxit.codeverse.repl.co/lib/jaxit.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/CoderUltraSonic/Jaxit@f738769/jaxit.css">
 ```
 You can also import directly into your existing CSS File.
 
 ```css
-@import url('https://jaxit.codeverse.repl.co/lib/jaxit.css');
+@import url('https://cdn.jsdelivr.net/gh/CoderUltraSonic/Jaxit@f738769/jaxit.css');
 ```
 
 You can import Jaxit's JavaScript File like this in HTML.
@@ -31,8 +24,8 @@ You can import Jaxit's JavaScript File like this in HTML.
 **Note:** You can use the `jaxit.js` for development, but use the `jaxit.min.js` for production.
 
 ```html
-<script src="https://jaxit.codeverse.repl.co/lib/jaxit.js"></script>
-<script src="https://jaxit.codeverse.repl.co/lib/jaxit.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/CoderUltraSonic/Jaxit@f738769/jaxit.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/CoderUltraSonic/Jaxit@f738769/jaxit.min.js"></script>
 ```
 
 You can import Jaxit's Javascript File like this directly into your existing JavaScript File.
@@ -45,8 +38,8 @@ You can import Jaxit's Javascript File like this directly into your existing Jav
 **Note:** You can use the `jaxit.module.js` for development, but use the `jaxit.module.min.js` for production.
 
 ```js 
-import {createJaxit} from 'https://jaxit.codeverse.repl.co/lib/jaxit.module.js';
-import {createJaxit} from 'https://jaxit.codeverse.repl.co/lib/jaxit.module.min.js';
+import {createJaxit} from 'https://cdn.jsdelivr.net/gh/CoderUltraSonic/Jaxit@f738769/jaxit.module.js';
+import {createJaxit} from 'https://cdn.jsdelivr.net/gh/CoderUltraSonic/Jaxit@f738769/jaxit.module.min.js';
 ```
 
 ---
@@ -58,7 +51,7 @@ Jaxit makes a simple console place which you can style if you want. If you do no
 This is what your JavaScript File should look like at the beginning. I am using ES6 modules.
 
 ```js
-import {createJaxit} from 'https://jaxit.codeverse.repl.co/lib/jaxit.module.js';
+import {createJaxit} from 'https://cdn.jsdelivr.net/gh/CoderUltraSonic/Jaxit@f738769/jaxit.module.js';
 
 //This will put the 'jax' variable as the Jaxit Object.
 var jax = createJaxit();
