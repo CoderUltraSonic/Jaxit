@@ -133,7 +133,7 @@ class Jaxit {
 
   scan(text, color='white', usercolor='white', int=false, callback) {
     let usertxt = 'hello';
-    this.print(text, true, color);
+    this.print(text, color);
     let userResArea = document.createElement('div');
     userResArea.contentEditable = 'true';
     userResArea.autofocus = 'true';
