@@ -11,12 +11,12 @@ Jaxit is in Github, so check on Codeverse's Profile, [CoderUltraSonic](https://g
 To use Jaxit's CSS File, simply type this in the HTML File.
 
 ```html 
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/CoderUltraSonic/Jaxit@f738769/jaxit.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/CoderUltraSonic/Jaxit@2.04.7/jaxit.css">
 ```
 You can also import directly into your existing CSS File.
 
 ```css
-@import url('https://cdn.jsdelivr.net/gh/CoderUltraSonic/Jaxit@f738769/jaxit.css');
+@import url('https://cdn.jsdelivr.net/gh/CoderUltraSonic/Jaxit@2.04.7/jaxit.css');
 ```
 
 You can import Jaxit's JavaScript File like this in HTML.
@@ -24,8 +24,8 @@ You can import Jaxit's JavaScript File like this in HTML.
 **Note:** You can use the `jaxit.js` for development, but use the `jaxit.min.js` for production.
 
 ```html
-<script src="https://cdn.jsdelivr.net/gh/CoderUltraSonic/Jaxit@f738769/jaxit.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/CoderUltraSonic/Jaxit@f738769/jaxit.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/CoderUltraSonic/Jaxit@2.04.7/jaxit.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/CoderUltraSonic/Jaxit@2.04.7/jaxit.min.js"></script>
 ```
 
 You can import Jaxit's Javascript File like this directly into your existing JavaScript File.
@@ -38,8 +38,8 @@ You can import Jaxit's Javascript File like this directly into your existing Jav
 **Note:** You can use the `jaxit.module.js` for development, but use the `jaxit.module.min.js` for production.
 
 ```js 
-import {createJaxit} from 'https://cdn.jsdelivr.net/gh/CoderUltraSonic/Jaxit@f738769/jaxit.module.js';
-import {createJaxit} from 'https://cdn.jsdelivr.net/gh/CoderUltraSonic/Jaxit@f738769/jaxit.module.min.js';
+import {createJaxit} from 'https://cdn.jsdelivr.net/gh/CoderUltraSonic/Jaxit@2.04.7/jaxit.module.js';
+import {createJaxit} from 'https://cdn.jsdelivr.net/gh/CoderUltraSonic/Jaxit@2.04.7/jaxit.module.min.js';
 ```
 
 ---
@@ -51,7 +51,7 @@ Jaxit makes a simple console place which you can style if you want. If you do no
 This is what your JavaScript File should look like at the beginning. I am using ES6 modules.
 
 ```js
-import {createJaxit} from 'https://cdn.jsdelivr.net/gh/CoderUltraSonic/Jaxit@f738769/jaxit.module.js';
+import {createJaxit} from 'https://cdn.jsdelivr.net/gh/CoderUltraSonic/Jaxit@2.04.7/jaxit.module.js';
 
 //This will put the 'jax' variable as the Jaxit Object.
 var jax = createJaxit();
