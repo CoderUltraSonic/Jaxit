@@ -11,12 +11,12 @@ Jaxit is in Github, so check on Codeverse's Profile, [CoderUltraSonic](https://g
 To use Jaxit's CSS File, simply type this in the HTML File.
 
 ```html 
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/CoderUltraSonic/Jaxit@2.04.7/jaxit.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/CoderUltraSonic/Jaxit@v3.01.1/jaxit.css">
 ```
 You can also import directly into your existing CSS File.
 
 ```css
-@import url('https://cdn.jsdelivr.net/gh/CoderUltraSonic/Jaxit@2.04.7/jaxit.css');
+@import url('https://cdn.jsdelivr.net/gh/CoderUltraSonic/Jaxit@v3.01.1/jaxit.css');
 ```
 
 You can import Jaxit's JavaScript File like this in HTML.
@@ -24,8 +24,8 @@ You can import Jaxit's JavaScript File like this in HTML.
 **Note:** You can use the `jaxit.js` for development, but use the `jaxit.min.js` for production.
 
 ```html
-<script src="https://cdn.jsdelivr.net/gh/CoderUltraSonic/Jaxit@2.04.7/jaxit.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/CoderUltraSonic/Jaxit@2.04.7/jaxit.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/CoderUltraSonic/Jaxit@v3.01.1/jaxit.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/CoderUltraSonic/Jaxit@v3.01.1/jaxit.min.js"></script>
 ```
 
 You can import Jaxit's Javascript File like this directly into your existing JavaScript File.
@@ -38,8 +38,8 @@ You can import Jaxit's Javascript File like this directly into your existing Jav
 **Note:** You can use the `jaxit.module.js` for development, but use the `jaxit.module.min.js` for production.
 
 ```js 
-import {createJaxit} from 'https://cdn.jsdelivr.net/gh/CoderUltraSonic/Jaxit@2.04.7/jaxit.module.js';
-import {createJaxit} from 'https://cdn.jsdelivr.net/gh/CoderUltraSonic/Jaxit@2.04.7/jaxit.module.min.js';
+import {createJaxit} from 'https://cdn.jsdelivr.net/gh/CoderUltraSonic/Jaxit@v3.01.1/jaxit.module.js';
+import {createJaxit} from 'https://cdn.jsdelivr.net/gh/CoderUltraSonic/Jaxit@v3.01.1/jaxit.module.min.js';
 ```
 
 ---
@@ -51,7 +51,7 @@ Jaxit makes a simple console place which you can style if you want. If you do no
 This is what your JavaScript File should look like at the beginning. I am using ES6 modules.
 
 ```js
-import {createJaxit} from 'https://cdn.jsdelivr.net/gh/CoderUltraSonic/Jaxit@2.04.7/jaxit.module.js';
+import {createJaxit} from 'https://cdn.jsdelivr.net/gh/CoderUltraSonic/Jaxit@v3.01.1/jaxit.module.js';
 
 //This will put the 'jax' variable as the Jaxit Object.
 var jax = createJaxit();
@@ -152,8 +152,7 @@ Here is how to do it.
 ```js
 /*
 First parameter: The text you want to slowprint.
-Second parameter: The duration for each character to be printed out. (This will change in a future update into the 
-duration for the entire string to be printed out.) This is in milliseconds and does not support decimals.
+Second parameter: The duration for the entire string to be printed out. This is in milliseconds and does not support decimals.
 Third parameter: The color of the text. (Rainbow colors are not supported.)
 Fourth parameter: Since this code is asynchronous, Jaxit has a callback to do after the message is slowprinted.
 jax.slowprint('Hello World', 400, "green", function() {
@@ -228,8 +227,82 @@ jax.changeConsoleFont(newfont);
 jax.changeConsoleColor(newcolor);
 //This changes the background color of the console.
 
-jax.changeConsoleColorGradient(the_array_of_colors_you_want_to_use, 
-type_this_is_default_to_linear_but_also_supports_radial, 
-direction_this_is_for_the_direction_of_the_linear_gradient);
+jax.changeConsoleColorGradient(arr, type, direction);
+/*
+First parameter: The array of colors you want to use.
+Second parameter: The type of gradient; this is default to linear but also supports radial.
+Third parameter: This only applies to linear gradient; the direction of the linear gradient.
+*/
 
+jax.changeConsoleSize(wantedwidth, wantedHeight, width_measurement_type, height_measure_type);
+//If you don't want to change something, leave it as an empty string.
+
+jax.changeLocation(loc);
+//Changes the location of the console.
+//You can do: top, bottom, left, right, or fullscreen.
+```
+
+---
+
+### Example JavaScript File
+
+```js
+import {createJaxit} from 'https://cdn.jsdelivr.net/gh/CoderUltraSonic/Jaxit@v3.01.1/jaxit.module.js';
+
+let jax = createJaxit();
+
+jax.init();
+jax.defaultStyle();
+jax.changeLocation('fullscreen');
+
+questions = [
+  ['What is Jaxit?', 'library'],
+  ['Jaxit makes a ___ console.', 'interactive'],
+  ['Who made Jaxit?', 'coderultrasonic'],
+  ['Can you delay a function in Jaxit? (y/n)', 'y'],
+  ['Which Jaxit version was made in May 2021?', 'v3.01.1'
+]
+
+jax.print('Some text', jax.colors.white);
+jax.print('');
+
+let curques = 0;
+let correct = 0;
+let incorrect = 0;
+
+function askQuestion() {
+  if (curques < questions.length) {
+    jax.scan(questions[curques][0], jax.colors.lightgreen, jax.colors.white, false, res => {
+      if (res.toLowerCase() == questions[curques][1]) {
+        jax.print('Great Job!', jax.colors.green);
+        correct += 1;
+      } else {
+        jax.print('Aww... You missed that!', jax.colors.red);
+        incorrect += 1;
+      }
+      curques += 1;
+      askQuestion();
+    });
+  } else {
+    jax.print(`You got ${correct} question(s) correct, and you missed ${incorrect} question(s). There was a total of ${questions.length} questions on the test.`, jax.colors.lightblue);
+
+    jax.scan('Do you want to take the test again? (y/n)', jax.colors.lightgreen, "white", false, res => {
+      if (res == 'y') {
+        jax.clear();
+        curques = 0;
+        correct = 0;
+        incorrect = 0;
+
+        jax.print('This website tests you what you have learned in summer. It is constantly being updated though.', jax.colors.white);
+        jax.print('');
+
+        askQuestion();
+      } else {
+        jax.print('Goodbye!', jax.colors.red);
+      }
+    });
+  }
+}
+
+askQuestion();
 ```
