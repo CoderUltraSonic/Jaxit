@@ -139,3 +139,97 @@ Here is how to do it.
 ```js
 jax.clear();
 ```
+
+---
+
+### Slowprinting the Print Message
+
+Sometimes you want to slowprint the message for added effect. It might seem like a huge struggle to make by yourself, so let Jaxit do the work for you.
+If you wanted to do this by yourself, you would need to make asynchronous functions synchronous and make a recursive function. That would make your code very messy and huge. 
+
+Here is how to do it.
+
+```js
+/*
+First parameter: The text you want to slowprint.
+Second parameter: The duration for each character to be printed out. (This will change in a future update into the 
+duration for the entire string to be printed out.) This is in milliseconds and does not support decimals.
+Third parameter: The color of the text. (Rainbow colors are not supported.)
+Fourth parameter: Since this code is asynchronous, Jaxit has a callback to do after the message is slowprinted.
+jax.slowprint('Hello World', 400, "green", function() {
+  jax.print('Finished the slowprint!');
+});
+*/
+```
+
+---
+
+### Jaxit's Color Scheme
+
+Jaxit has a color scheme that is usuable. 
+
+It supports these following colors. (More will be added in future updates.)
+
+- red
+- lightgreen
+- blue
+- white
+- gray
+- green
+- purple
+- pink
+- yellow
+- lightblue
+- yellowgreen
+- cyan
+- teal
+- hotpink
+
+To get these colors, simply type wherever you need a color the following line (The $color$ portion will be filled 
+with the color in Jaxit's color scheme list.)
+
+Here is how to do it.
+
+`jax.colors.$color$`
+
+---
+
+### Styling the Console using CSS
+
+Here is how to do it.
+
+```css
+/* First, get the Jaxit's console's class. And if you want, take out jax.defaultStyle() */
+
+.jaxit-console {
+  /* You can put whatever you want here. */
+  opacity: 0.5;
+}
+```
+
+---
+
+### Styling the Console using JS
+
+Here is how to do it.
+
+```js
+jax.jaxconsole.style.opacity = "0.5";
+```
+
+### Styling the Console using Built-in Functions
+
+You can use:
+
+```js
+jax.changeConsoleFont(newfont);
+// Remember that you have to put the new font in your html file. You can use Google Fonts for this.
+
+jax.changeConsoleColor(newcolor);
+//This changes the background color of the console.
+
+jax.changeConsoleColorGradient(the_array_of_colors_you_want_to_use, 
+type_this_is_default_to_linear_but_also_supports_radial, 
+direction_this_is_for_the_direction_of_the_linear_gradient);
+
+```
