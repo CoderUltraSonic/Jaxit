@@ -47,7 +47,7 @@ class Jaxit {
   slowprint(text, duration, color_='white', callback) { 
     let i = 0;
     let txt = text;
-    let speed = duration;
+    let speed = duration / txt.length;
     let color = color_;
     let console_ = this.jaxconsole;
     typeWriter();
@@ -138,7 +138,6 @@ class Jaxit {
     userResArea.contentEditable = 'true';
     userResArea.autofocus = 'true';
     userResArea.style.color = usercolor;
-    //userResArea.style.border = "1px solid white;"
     userResArea.className = 'jaxconsole-scan';
     userResArea.style.width = '100%';
     this.jaxconsole.appendChild(userResArea);
@@ -168,6 +167,7 @@ class Jaxit {
   }
 
   defaultStyle() {
+    this.jaxconsole.className = "jaxit-console";
     this.jaxconsole.style.backgroundColor = 'black';
     this.jaxconsole.style.position = 'fixed';
     this.jaxconsole.style.top = '0px';
