@@ -263,7 +263,7 @@ questions = [
   ['Which Jaxit version was made in May 2021?', 'v3.01.1'
 ]
 
-jax.print('Some text', jax.colors.white);
+jax.print('This is a test.', jax.colors.white);
 jax.print('');
 
 let curques = 0;
@@ -293,7 +293,7 @@ function askQuestion() {
         correct = 0;
         incorrect = 0;
 
-        jax.print('This website tests you what you have learned in summer. It is constantly being updated though.', jax.colors.white);
+        jax.print('This is a text', jax.colors.white);
         jax.print('');
 
         askQuestion();
@@ -306,3 +306,7 @@ function askQuestion() {
 
 askQuestion();
 ```
+
+---
+
+### Thank you for reading!
