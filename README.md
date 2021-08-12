@@ -155,10 +155,10 @@ First parameter: The text you want to slowprint.
 Second parameter: The duration for the entire string to be printed out. This is in milliseconds and does not support decimals.
 Third parameter: The color of the text. (Rainbow colors are not supported.)
 Fourth parameter: Since this code is asynchronous, Jaxit has a callback to do after the message is slowprinted.
+*/
 jax.slowprint('Hello World', 400, "green", function() {
   jax.print('Finished the slowprint!');
 });
-*/
 ```
 
 ---
