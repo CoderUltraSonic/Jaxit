@@ -1,8 +1,7 @@
 # Jaxit
 Jaxit is an easy-to-use library that makes an interactive terminal for your programs.
 
-Jaxit was made by Codeverse. It has a MIT License so you can make copies of it.
-Jaxit is in Github, so check on Codeverse's Profile, [CoderUltraSonic](https://github.com/CoderUltraSonic).
+Jaxit was made by Codeverse, so check on Codeverse's Profile, [CoderUltraSonic](https://github.com/CoderUltraSonic).
 
 ---
 
