@@ -10,12 +10,12 @@ Jaxit was made by Codeverse, so check on Codeverse's Profile, [CoderUltraSonic](
 To use Jaxit's CSS File, simply type this in the HTML File.
 
 ```html 
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/CoderUltraSonic/Jaxit@v3.01.1/jaxit.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/CoderUltraSonic/Jaxit@v3.02.3/jaxit.css">
 ```
 You can also import directly into your existing CSS File.
 
 ```css
-@import url('https://cdn.jsdelivr.net/gh/CoderUltraSonic/Jaxit@v3.01.1/jaxit.css');
+@import url('https://cdn.jsdelivr.net/gh/CoderUltraSonic/Jaxit@v3.02.3/jaxit.css');
 ```
 
 You can import Jaxit's JavaScript File like this in HTML.
@@ -23,8 +23,8 @@ You can import Jaxit's JavaScript File like this in HTML.
 **Note:** You can use the `jaxit.js` for development, but use the `jaxit.min.js` for production.
 
 ```html
-<script src="https://cdn.jsdelivr.net/gh/CoderUltraSonic/Jaxit@v3.01.1/jaxit.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/CoderUltraSonic/Jaxit@v3.01.1/jaxit.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/CoderUltraSonic/Jaxit@v3.02.3/jaxit.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/CoderUltraSonic/Jaxit@v3.02.3/jaxit.min.js"></script>
 ```
 
 You can import Jaxit's Javascript File like this directly into your existing JavaScript File.
@@ -37,8 +37,8 @@ You can import Jaxit's Javascript File like this directly into your existing Jav
 **Note:** You can use the `jaxit.module.js` for development, but use the `jaxit.module.min.js` for production.
 
 ```js 
-import {createJaxit} from 'https://cdn.jsdelivr.net/gh/CoderUltraSonic/Jaxit@v3.01.1/jaxit.module.js';
-import {createJaxit} from 'https://cdn.jsdelivr.net/gh/CoderUltraSonic/Jaxit@v3.01.1/jaxit.module.min.js';
+import {createJaxit} from 'https://cdn.jsdelivr.net/gh/CoderUltraSonic/Jaxit@v3.02.3/jaxit.module.js';
+import {createJaxit} from 'https://cdn.jsdelivr.net/gh/CoderUltraSonic/Jaxit@v3.02.3/jaxit.module.min.js';
 ```
 
 ---
@@ -50,7 +50,7 @@ Jaxit makes a simple console place which you can style if you want. If you do no
 This is what your JavaScript File should look like at the beginning. I am using ES6 modules.
 
 ```js
-import {createJaxit} from 'https://cdn.jsdelivr.net/gh/CoderUltraSonic/Jaxit@v3.01.1/jaxit.module.js';
+import {createJaxit} from 'https://cdn.jsdelivr.net/gh/CoderUltraSonic/Jaxit@v3.02.3/jaxit.module.js';
 
 //This will put the 'jax' variable as the Jaxit Object.
 var jax = createJaxit();
@@ -183,12 +183,37 @@ It supports these following colors. (More will be added in future updates.)
 - teal
 - hotpink
 
-To get these colors, simply type wherever you need a color the following line (The $color$ portion will be filled 
+To get these colors, simply type wherever you need a color the following line (The [color] portion will be filled 
 with the color in Jaxit's color scheme list.)
 
 Here is how to do it.
 
-`jax.colors.$color$`
+`jax.colors.[color]`
+
+---
+
+### Adding Custom Colors in Jaxit
+
+Some users need custom colors that are not there in the colors object.
+
+You can use this function to add your color in the object, so you can refer back to the same color over and over
+again in the project.
+
+Here is how to do it.
+
+```js
+/* 
+First parameter: The name of the color that you want. Take note that the name can be whatever you want.
+Second parameter: This is the color code of the color you want. You use Hex (Ex. #000000), RGB and RGBA 
+(Ex. rgba(100, 100, 100, 0.7) and rgb(100, 100, 100)), or the name of the color in CSS (Ex: lightgreen)
+*/
+jax.customColor("myNewColor", "#94D9F3");
+
+// Now I can access the color wherever I need in the code.
+
+jax.colors.myNewColor;
+
+```
 
 ---
 
@@ -253,6 +278,7 @@ let jax = createJaxit();
 jax.init();
 jax.defaultStyle();
 jax.changeLocation('fullscreen');
+jax.customColor('myLightBlue', '#94D9F3');
 
 questions = [
   ['What is Jaxit?', 'library'],
@@ -262,7 +288,7 @@ questions = [
   ['Which Jaxit version was made in May 2021?', 'v3.01.1'
 ]
 
-jax.print('This is a test.', jax.colors.white);
+jax.print('This is a test.', jax.colors.myLightBlue);
 jax.print('');
 
 let curques = 0;
