@@ -9,6 +9,7 @@ function createJaxitAnimation(jaxitobj) {
 class Jaxit {
   constructor() {
     this.jaxconsole;
+    this.keys_arr;
 
     this.colors = {
       red: '#FF0000',
@@ -31,9 +32,15 @@ class Jaxit {
   init() {
     this.jaxconsole = document.createElement('div');
     document.body.appendChild(this.jaxconsole);
+    
+    this.keys_arr = [];
   }
 
-  print(text, color='white') {
+  customColor(name, colorcode) {
+    this.colors[name] = colorcode;
+  }
+
+  print(text='', color='white') {
     if (true) {
       this.jaxconsole.innerHTML += '<span style="color: ' + color + '"> ' + text + '<br></span>'
     } else if (false) {
@@ -47,6 +54,7 @@ class Jaxit {
     let speed = duration / txt.length;
     let color = color_;
     let console_ = this.jaxconsole;
+    
     typeWriter();
 
     function print_(text_, color='white') {
@@ -69,7 +77,11 @@ class Jaxit {
 
   delay(function_, duration) {
     setTimeout(() => {
-      function_();
+      try {
+        function_();
+      } catch (error) {
+        console.error("Jaxit found that your delayed function could not process due to errors. Please refer back to the code.");
+      }
     }, duration * 1000);
   }
 
@@ -138,6 +150,7 @@ class Jaxit {
     userResArea.className = 'jaxconsole-scan';
     userResArea.style.width = '100%';
     this.jaxconsole.appendChild(userResArea);
+    userResArea.focus();
 
     userResArea.addEventListener('keypress', (e) => {
       if (e.keyCode == 13) {
@@ -151,7 +164,11 @@ class Jaxit {
           }
         } else if (int) {
           if (typeof callback == "function") {
-            callback(parseInt(usertxt));
+            try {
+              callback(parseInt(usertxt));
+            } catch (error) {
+              console.error("Jaxit found that your integer scan could not process due to errors. Please refer back to the code.");
+            }
           }
         }
       }
@@ -174,4 +191,6 @@ class Jaxit {
     this.jaxconsole.style.fontFamily = 'monospace';
     this.jaxconsole.style.padding = '5px';
   }
+
+  
 }
