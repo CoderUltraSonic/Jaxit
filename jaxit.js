@@ -33,9 +33,13 @@ class Jaxit {
     }
   }
 
-  init() {
+  init(element='body') {
     this.jaxconsole = document.createElement('div');
-    document.body.appendChild(this.jaxconsole);
+    if (element == 'body') {
+      document.body.appendChild(this.jaxconsole);
+    } else {
+      document.querySelector(element).appendChild(this.jaxconsole);
+    }
     
     this.keys_arr = [];
   }
